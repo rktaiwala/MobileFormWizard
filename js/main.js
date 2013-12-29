@@ -124,7 +124,7 @@ jQuery.fn.extend({
 			var curInputs=$(stps[crstep-1]).find('input');
 			$.each(curInputs,function(i,v){
 				if($(v).attr('required')){
-					if($(v).val()!=''){
+					if(!$(v).is(':invalid')){
 						valid=true;
 					}else{
 						valid=false,inValidEle=v;
