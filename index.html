@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Mobile Form Wizard</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/mfw.css">
+<link rel="stylesheet" href="css/animate.css">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+
+</head>
+<body>
+<form role="form" id="myForm">
+	<div data-step="1">
+	  <div class="form-group" >
+		<label>Delivery Type</label>
+		<div class="radio">
+			<label>
+			  <input type="radio" name="deliverytype" id="deliverytypeh" value="H" checked>
+			  Home Delivery
+			</label>
+		</div>
+		<div class="radio">
+			<label>
+			  <input type="radio" name="deliverytype" id="deliverytypet" value="T" >
+			  Take Away
+			</label>
+		</div>
+	  </div>
+	  
+	</div>
+	<div data-step="2" data-depends="deliverytype" data-depends-value="H">
+	  <div class="form-group">
+		<label for="deliveryarea">Delivery Area</label>
+		<input type="text" class="form-control" id="deliveryarea" placeholder="Area" required=1>
+	  </div>
+	  <div class="form-group" >
+		<label for="address">Address</label>
+		<input type="text" class="form-control" id="address" placeholder="Address" required=1>
+	  </div>
+	</div>
+	<div data-step="3">
+	  <div class="form-group" >
+		<label for="name">Name</label>
+		<input type="text" class="form-control" id="name" placeholder="Name">
+	  </div>
+	  <div class="form-group" >
+		<label for="phone">Phone</label>
+		<input type="text" class="form-control" id="phone" placeholder="Phone">
+	  </div>
+	</div>
+  <div class="checkbox" data-step="4">
+    <label>
+      <input type="checkbox"> Check me out
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default" >Submit</button>
+</form>
+<script type="text/javascript" src="js/main.js"></script>
+<script>
+$('#myForm').MobileForm();
+</script>
+</body>
+</html>
