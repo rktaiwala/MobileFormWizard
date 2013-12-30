@@ -75,9 +75,55 @@
 </div>
 </div>
 <div class="row" style="color: white;margin: 0;background: #3498db;">
-	<div class="col-md-3">
+	<div class="col-md-3 col-md-offset-1">
 		<h4>How to use</h4>
 		<p>Create markup for form as you like, to create <i>form steps</i> just wrap the steps in a <b>div</b> with data attribute step. Example: <code>&lt;div data-step=1 &gt;... &lt;/div&gt;</code> </p>
+		<pre>&lt;form role="form" id="myForm"&gt;
+	&lt;div data-step="1"&gt;
+	  &lt;div class="form-group" &gt;
+		&lt;label&gt;Delivery Type&lt;/label&gt;
+		&lt;div class="radio"&gt;
+			&lt;label&gt;
+			  &lt;input type="radio" name="deliverytype" id="deliverytypeh" value="H" checked&gt;
+			  Home Delivery
+			&lt;/label&gt;
+		&lt;/div&gt;
+		&lt;div class="radio"&gt;
+			&lt;label&gt;
+			  &lt;input type="radio" name="deliverytype" id="deliverytypet" value="T" &gt;
+			  Take Away
+			&lt;/label&gt;
+		&lt;/div&gt;
+	  &lt;/div&gt;
+	  
+	&lt;/div&gt;
+	&lt;div data-step="2" data-depends="deliverytype" data-depends-value="H"&gt;
+	  &lt;div class="form-group"&gt;
+		&lt;label for="deliveryarea"&gt;Delivery Area&lt;/label&gt;
+		&lt;input type="text" class="form-control" id="deliveryarea" placeholder="Area" required=1&gt;
+	  &lt;/div&gt;
+	  &lt;div class="form-group" &gt;
+		&lt;label for="address"&gt;Address&lt;/label&gt;
+		&lt;input type="text" class="form-control" id="address" placeholder="Address" required=1&gt;
+	  &lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div data-step="3"&gt;
+	  &lt;div class="form-group" &gt;
+		&lt;label for="name"&gt;Name&lt;/label&gt;
+		&lt;input type="text" class="form-control" id="name" placeholder="Name"&gt;
+	  &lt;/div&gt;
+	  &lt;div class="form-group" &gt;
+		&lt;label for="phone"&gt;Phone&lt;/label&gt;
+		&lt;input type="text" class="form-control" id="phone" placeholder="Phone"&gt;
+	  &lt;/div&gt;
+	&lt;/div&gt;
+  &lt;div class="checkbox" data-step="4"&gt;
+    &lt;label&gt;
+      &lt;input type="checkbox"&gt; Check me out
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;button type="submit" class="btn btn-default" &gt;Submit&lt;/button&gt;
+&lt;/form&gt;</pre>
 	</div>
 </div>
 <script type="text/javascript" src="js/main.js"></script>
