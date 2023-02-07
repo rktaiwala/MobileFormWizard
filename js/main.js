@@ -5,11 +5,11 @@ jQuery.fn.extend({
 			var s=j();
 			getDataAttr();
 			getDataDepends();
-			//hideOthers(1);
+			hideOthers(1);
 			initialize=false;
-			//hideSubmit();
-			//injectBtn();
-			//enableDisablePNBtn();
+			hideSubmit();
+			injectBtn();
+			enableDisablePNBtn();
 		},
 		j = function() {
 			return self;
